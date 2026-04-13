@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+<body>
+
+
+
+{% block content %}
+
+<div class="text-center mt-5">
+
+    <h1 class="display-4 fw-bold">
+        Valoran<span class="highlight">Tracker</span>
+    </h1>
+
+    <p class="lead mt-3">
+        Consulta estadísticas de jugadores
+    </p>
+
+    <div class="input-group input-group-lg mx-auto mt-4" style="max-width: 600px;">
+
+        <input type="text" class="form-control" placeholder="Jugador#TAG">
+
+        <button class="btn btn-primary-custom">
+            Buscar
+        </button>
+
+    </div>
+
+</div>
+
+<div class="container mt-5">
+
+    <div class="row g-4 text-center">
+
+        <div class="col-md-4">
+            <div class="card p-4">
+                <h5>K/D Ratio</h5>
+                <h2 class="highlight">1.42</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4">
+                <h5>Win Rate</h5>
+                <h2 class="highlight">61%</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4">
+                <h5>Headshot %</h5>
+                <h2 class="highlight">27%</h2>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+</body>
