@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-10">
+            <div class="card p-5 border-0 shadow-lg" style="background: rgba(20, 28, 38, 0.9); border-radius: 15px;">
+                <div class="row align-items-center">
+                    <div class="col-md-3 text-center mb-4 mb-md-0">
+                        <div class="position-relative d-inline-block">
+                            <div class="rounded-circle" style="width: 150px; height: 150px; background: linear-gradient(45deg, #ff4655, #0f1923); padding: 5px;">
+                                <div class="bg-dark rounded-circle w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-user-ninja fa-4x text-white-50"></i>
+                                </div>
+                            </div>
+                            <span class="position-absolute bottom-0 end-0 badge rounded-pill bg-danger border border-dark px-3 py-2" style="font-size: 1rem;">
+                                LVL {{ jugador.nivel }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 text-center text-md-start">
+                        <h6 class="text-uppercase mb-1" style="color: #ff4655; letter-spacing: 2px;">Perfil de Jugador</h6>
+                        <h1 class="display-3 fw-bold mb-0">
+                            {{ jugador.nickname }}<span class="text-muted" style="font-weight: 300;">#{{ jugador.tag }}</span>
+                        </h1>
+                        <div class="d-flex flex-wrap gap-3 mt-3 justify-content-center justify-content-md-start">
+                            <span class="badge bg-light text-dark px-3 py-2 fw-bold">
+                                <i class="fa-solid fa-trophy me-2"></i>{{ jugador.rango }}
+                            </span>
+                            <span class="badge bg-secondary px-3 py-2 fw-bold">
+                                <i class="fa-solid fa-bolt me-2"></i>{{ jugador.agente_favorito }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center">
+                <i class="fa-solid fa-ranking-star fa-2x mb-3 highlight"></i>
+                <h5 class="text-muted text-uppercase small fw-bold">Rango Actual</h5>
+                <h3 class="fw-bold">{{ jugador.rango }}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center">
+                <i class="fa-solid fa-medal fa-2x mb-3 highlight"></i>
+                <h5 class="text-muted text-uppercase small fw-bold">Nivel de Cuenta</h5>
+                <h3 class="fw-bold">{{ jugador.nivel }}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center">
+                <i class="fa-solid fa-person-rifle fa-2x mb-3 highlight"></i>
+                <h5 class="text-muted text-uppercase small fw-bold">Agente Favorito</h5>
+                <h3 class="fw-bold">{{ jugador.agente_favorito }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+        <a href="{% url 'Inicio' %}" class="btn btn-outline-light px-4 py-2">
+            <i class="fa-solid fa-arrow-left me-2"></i> Volver a Buscar
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Efecto de brillo adicional para las tarjetas de perfil */
+    .card {
+        border: 1px solid rgba(255, 70, 85, 0.1) !important;
+    }
+    .highlight {
+        color: #ff4655;
+    }
+</style>
+{% endblock %}
